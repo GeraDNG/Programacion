@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		//Iniciar teclado:
+		Scanner teclado = new Scanner(System.in);
+		//Iniciar clase fecha:
+		Fecha miFecha = new Fecha ();
+		//Variables:
+		boolean bisiesto = false;
+		int d, m, a, opcion;
+		do{
+			System.out.println("Opciones:");
+			System.out.println("1) Dar fecha actual.");
+			System.out.println("2) Dar fecha cumpleanos.");
+			System.out.println("3) Sumar dias a fecha actual.");
+			System.out.println("4) Sumar meses a fecha actual.");
+			System.out.println("5) Sumar anos a fecha actual.");
+			System.out.println("6) Salir.");
+			System.out.println("Dar el numero de la opcion deseada:   ");
+			opcion = teclado.nextInt();
+			switch (opcion){
+			case 1:
+				System.out.println("Dar el ano actual:   ");
+				a = teclado.nextInt();
+				miFecha.setAno(a);
+				System.out.println("Dar el mes actual:   ");
+				m = teclado.nextInt();
+				miFecha.setMes(m);
+				System.out.println("Dar el dia actual:   ");
+				d = teclado.nextInt();
+				miFecha.setDia(bisiesto, m, d);
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			}
+		} while (opcion != 6);
+		
+		teclado.close();
+	}
+
+}

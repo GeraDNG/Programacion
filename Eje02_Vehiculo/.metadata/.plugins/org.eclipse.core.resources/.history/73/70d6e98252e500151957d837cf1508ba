@@ -1,0 +1,25 @@
+
+public class Vehiculo {
+	
+	protected String modelo;
+	protected String fabricante;
+	protected int capacidad;
+	protected double rendimiento;
+	protected double precio;
+	
+	public void vehiculo(){
+		modelo = "458";
+		fabricante = "Ferrari";
+		capacidad = 80;
+		rendimiento = 15.6;
+		precio = 7000000;
+	}
+	public void vehiculo(String m, String f, int c, double r, double p){
+		modelo = m;
+		fabricante = f;
+		capacidad = c;
+		rendimiento = r;
+		precio = p;
+	}
+	
+}

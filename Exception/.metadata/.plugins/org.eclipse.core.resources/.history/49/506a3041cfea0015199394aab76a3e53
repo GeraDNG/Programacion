@@ -1,0 +1,15 @@
+import java.io.FileReader;
+import java.util.*;
+public class TryCatchFinally {
+	public static double division(int a, int b){
+		double res=0;
+		try{
+			res=a/b;
+			FileReader fi = new FileReader("SinArchivo.txt");
+		}
+		catch(ArithmeticException e){
+			System.out.println("No se puede dividir entre 0");
+			
+		}
+	}
+}

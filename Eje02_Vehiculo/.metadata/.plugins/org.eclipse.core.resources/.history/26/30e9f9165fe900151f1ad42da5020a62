@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		Agencia miAgencia = new Agencia();
+		Vehiculo miVehiculo = new Vehiculo();
+		int o, c;
+		String m, f;
+		double r, p;
+
+		do{
+			System.out.println();
+			System.out.println("Opciones:");
+			System.out.println("1) Crear vehiculo compacto.");
+			System.out.println("2) Crear vehiculo familiar.");
+			System.out.println("3) Crear vehiculo pickup.");
+			System.out.println("4) .");
+			System.out.println("5) .");
+			System.out.println("6) .");
+			System.out.println("7) .");
+			System.out.println("8) .");
+			System.out.println("9) Salir.");
+			System.out.println(" Dar el numero de la opcion deseada:   ");
+			o = teclado.nextInt();
+			switch (o){
+			case 1:
+				System.out.println("Dar modelo.");
+				m = teclado.next();
+				System.out.println("Dar fabricante.");
+				f = teclado.next();
+				System.out.println("Dar capacidad.");
+				c = teclado.nextInt();
+				System.out.println("Dar rendimiento.");
+				r = teclado.nextDouble();
+				System.out.println("Dar precio.");
+				p = teclado.nextDouble();
+				break;
+			case 2:
+				System.out.println("Dar modelo.");
+				m = teclado.next();
+				System.out.println("Dar fabricante.");
+				f = teclado.next();
+				System.out.println("Dar capacidad.");
+				c = teclado.nextInt();
+				System.out.println("Dar rendimiento.");
+				r = teclado.nextDouble();
+				System.out.println("Dar precio.");
+				p = teclado.nextDouble();
+				break;
+			}
+		} while (o!=9);
+		teclado.close();
+	}
+}

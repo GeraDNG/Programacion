@@ -1,0 +1,63 @@
+//CLASE:
+public class Semaforo {
+     
+    private boolean encendido;
+    private boolean boton;
+    private String  luz;
+     
+    //CONSTRUCTORES:
+    public Semaforo (){
+        encendido   = true;
+        boton       = false;
+        luz         = "Rojo";
+    }
+    public Semaforo (boolean e, boolean b, String l){
+        encendido   = e;
+        boton       = b;
+        luz         = l;
+    }
+    //SETTERS:
+    public void setLuz(String l){
+    	luz = l;
+    }
+    //GETTERS:
+    public boolean getBoton (){
+        return boton;
+    }
+    public String getLuz(){
+        return luz;
+    }
+    public boolean getEncendido(){
+    	return encendido;
+    }
+    //METODOS;
+    public void encender(){
+    	encendido = true;
+    }
+    public void apagar(){
+    	encendido = false;
+    }
+    public void apretarBoton(){
+    	boton = true;
+    }
+    public void soltarBoton(){
+    	boton = false;
+    }
+    public void funcionar(boolean e, boolean b){
+        if (encendido==true){
+            if(boton==true){
+                luz="Rojo";
+            }
+            if(boton==false){
+            	for (int i=0;i<10;i++){
+            		System.out.println("Rojo");
+            		System.out.println("Verde");
+            		System.out.println("Ambar");
+            	}
+            }
+        }
+        if (encendido==false){
+        	luz="Apagado";
+        }
+    }
+}

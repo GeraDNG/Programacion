@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		Agencia miAgencia = new Agencia();
+		Vehiculo miVehiculo = new Vehiculo();
+		int o, c;
+		String m, f;
+		double r, p, a, l, h, max;
+		boolean t, dvd;
+		do{
+			System.out.println();
+			System.out.println("Opciones:");
+			System.out.println("1) Agregar vehiculo");
+			System.out.println("2) Borrar vehiculo familiar.");
+			System.out.println("3) Ver existencia de vehiculo.");
+			System.out.println("4) Ver vehiculos adquiribles.");
+			System.out.println("5) Ver vehiculo con mejor rendimiento.");
+			System.out.println("6) Mostrar pickups.");
+			System.out.println("7) Salir.");
+			System.out.println(" Dar el numero de la opcion deseada:   ");
+			o = teclado.nextInt();
+			switch (o){
+			case 1:
+				System.out.println("Dar modelo.");
+				m = teclado.next();
+				miVehiculo.setModelo(m);
+				System.out.println("Dar fabricante.");
+				f = teclado.next();
+				miVehiculo.setFabricante(f);
+				System.out.println("Dar capacidad.");
+				c = teclado.nextInt();
+				miVehiculo.setCapacidad(c);
+				System.out.println("Dar rendimiento.");
+				r = teclado.nextDouble();
+				miVehiculo.setRendimiento(r);
+				System.out.println("Dar precio.");
+				p = teclado.nextDouble();
+				miVehiculo.setPrecio(p);
+				System.out.println("¿Es electrico? (1 para si o 0 para no): ");
+				t = teclado.nextBoolean();
+				Vehiculo carro = new Compacto(m, f, c, r, p, t);
+				miAgencia.agregar(carro);
+				break;
+			case 2:
+				System.out.println("Dar modelo.");
+				m = teclado.next();
+				System.out.println("Dar fabricante.");
+				f = teclado.next();
+				System.out.println("Dar capacidad.");
+				c = teclado.nextInt();
+				System.out.println("Dar rendimiento.");
+				r = teclado.nextDouble();
+				System.out.println("Dar precio.");
+				p = teclado.nextDouble();
+				break;
+			}
+		} while (o!=9);
+		teclado.close();
+	}
+}

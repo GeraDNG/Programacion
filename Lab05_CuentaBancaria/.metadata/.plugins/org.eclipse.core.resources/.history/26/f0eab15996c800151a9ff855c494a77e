@@ -1,0 +1,55 @@
+
+public class Cuenta {
+	private String	nombre;
+	private int		cuenta;
+	private int		dinero;
+	
+	public Cuenta (){
+		nombre = "Gerardo";
+		cuenta = 123456789;
+		dinero = 0;
+	}
+	public Cuenta (int n, int c, int d){
+		nombre = n;
+		cuenta = c;
+		dinero = d;
+	}
+	
+	public void setNombre(String n){
+		nombre = n;
+	}
+	public void setCuenta(int c){
+		cuenta = c;
+	}
+	public void setDinero(int d){
+		dinero = d;
+	}
+	
+	public String getNombre(){
+		return nombre;
+	}
+	public int getCuenta(){
+		return cuenta;
+	}
+	public int getDinero(){
+		return dinero;
+	}
+	
+	public void cambioNombre(String n){
+		nombre = n;
+	}
+	public void cambioCuenta(int c){
+		cuenta = c;
+	}
+	public void sumarDinero(int d, int suma){
+		dinero = d + suma;
+	}
+	public void restarDinero(int d, int resta){
+		if (resta<d){
+			dinero = d - resta;
+		}
+	}
+	public void cambioDinero(int d){
+		dinero = d;
+	}
+}

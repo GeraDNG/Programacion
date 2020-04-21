@@ -1,0 +1,57 @@
+import java.lang.Math;
+public class Terreno {
+	//VARIABLES:
+	private double area;
+	private int verticeX[] = new int[6];
+	private int verticeY[] = new int[6];
+	//CONSTRUCTORES:
+	public Terreno(){
+		area = 0;
+		for (int i=0; i<6; i++){
+			verticeX[i]=0;
+			verticeY[i]=0;
+		}
+	}
+	public Terreno(double a, int[] X, int[] Y){
+		area	 = a;
+		verticeX = X;
+		verticeY = Y;
+	}
+	//SETTERS:
+	public void setX (int X, int i){
+		verticeX[i] = X;
+	}
+	public void setY (int Y, int i){
+		verticeY[i] = Y;
+	}
+	//GETTERS:
+	public int[] getX (){
+		return verticeX;
+	}
+	public int[] getY (){
+		return verticeY;
+	}
+	//METODOS:
+	public void mostrarVertices(){
+		for (int i=0; i<6; i++){
+			System.out.println("El vertice "+i+" es: "+verticeX[i]+", "+verticeY[i]);
+		}
+	}
+	public void area(){
+		int suma1=0, suma2=0;
+		for(int i=0, j=1; i<6 && j<7; i++, j++){
+			if(j==6){
+				j=0;
+			}
+			suma1=suma1+(verticeX[i]*verticeY[j]);
+		}
+		for(int i=1, j=0; i<7 && j<6; i++, j++){
+			if(i==6){
+				i=0;
+			}
+			suma2=suma2+(verticeX[i]*verticeY[j]);
+		}
+		area=((Math.abs(suma1-suma2))/2);
+		System.out.println("El area del terreno seria de: "+area+" metros cuadrados.");
+	}
+}

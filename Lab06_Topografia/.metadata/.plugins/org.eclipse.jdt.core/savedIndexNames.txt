@@ -1,0 +1,6 @@
+INDEX VERSION 1.126+C:\Users\Surface Pro\Documents\TEC\Semestre IV\Programación\.metadata\.plugins\org.eclipse.jdt.core
+120640422.index
+4272965607.index
+738267469.index
+4256313517.index
+3435464431.index

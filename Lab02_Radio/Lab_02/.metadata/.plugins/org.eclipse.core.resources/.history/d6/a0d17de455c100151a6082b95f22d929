@@ -1,0 +1,159 @@
+import java.util.Scanner;
+// CLASE:
+public class Radio {
+	private double	estacion; //106.7
+	private String 	frecuencia; //AM o FM
+	private int 	volumen; //7
+	private boolean	encendido; //true o false
+	// CONSTRUCTORES:
+	public Radio (){
+		estacion	= 0;
+		frecuencia	= "FM";
+		volumen		= 0;
+		encendido	= false;
+	}
+	public Radio (double estacion, String f, int v, boolean e){
+		this.estacion	= estacion;
+		frecuencia		= f;
+		volumen			= v;
+		encendido		= e;
+	}
+	// SETTERS:
+	public void setEstacion (double e){
+		if (encendido){
+			if (frecuencia.equals("am") || frecuencia.equals("AM")){
+				if (estacion>=535 && estacion<=1605){
+					estacion=e;
+				}
+			}
+			if (frecuencia.equals("fm") || frecuencia.equals("FM")){
+				if (estacion>=88.1 && estacion<=108.1){
+					estacion=e;
+				}
+			}
+		}
+	}
+	public void setFrecuencia (String f){
+		if (encendido){
+			if (f.equals("am") || f.equals("AM") || f.equals("fm") || f.equals("FM")){
+				frecuencia = f;
+			}
+		}
+	}
+	public void setVolumen (int v){
+		if (encendido){
+			if ((v >= 0) && (v <= 10)){
+				volumen = v;
+			}
+		}
+	}
+	// GETTERS:
+	public double getEstacion (){
+		return estacion;
+	}
+	public String getFrecuencia (){
+		return frecuencia;
+	}
+	public int getVolumen (){
+		return volumen;
+	}
+	public boolean getEncendido (){
+		return encendido;
+	}
+	// METODOS:
+	public void encender (){
+		if (encendido==false){
+			encendido=true;
+		}
+	}
+	public void apagar (){
+		if (encendido){
+			encendido=false;
+		}		
+	}
+	public void cambioFrecuencia (String f){
+		frecuencia = f;
+	}
+	public void cambioEstacion (double e){
+		estacion = e;
+	}
+	public void cambioVolumen (int v){
+		volumen = v;
+	}
+	
+	// MAIN:
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		Radio miRadio = new Radio ();
+		boolean encendido=false;
+		boolean continuar=true;
+		String s1;
+		do{
+			if (encendido==false){
+				System.out.println("¡Bienvenido a SuperRadio 3000!");
+				System.out.println("Estas son las opciones: ");
+				System.out.println("A) Encender.");
+				System.out.println("B) Apagar.");
+				s1 = teclado.next();
+				teclado.nextLine();
+				if (s1.equals("A") || s1.equals("a")){
+					miRadio.encender();
+					System.out.println("Radio encendido.");
+					encendido=miRadio.getEncendido();
+				}
+				if (s1.equals("B") || s1.equals("b")){
+					miRadio.apagar();
+					System.out.println("Radio apagada. Gracias por utilizar SuperRadio3000.");
+					encendido=miRadio.getEncendido();
+					if (encendido==false){
+						continuar=false;
+					}
+				}
+			}
+			if (encendido==true){
+				System.out.println();
+				System.out.println("Opciones: ");
+				System.out.println("A) Elegir frecuencia.");
+				System.out.println("B) Cambiar estación.");
+				System.out.println("C) Cambiar volumen.");
+				System.out.println("D) Apagar.");
+				System.out.println("Escribir el inciso de la opción que desea: ");
+				s1 = teclado.next();
+				teclado.nextLine();
+				if (s1.equals("A") || s1.equals("a")){
+					String f, AUX;
+					System.out.println("Escribir AM o FM según desee: ");
+					f = teclado.next();
+					miRadio.setFrecuencia(f);
+					AUX=miRadio.getFrecuencia();
+					System.out.println("Cambio realizado a la frecuencia: "+AUX);
+				}
+				if (s1.equals("B") || s1.equals("b")){
+					double e, AUX;
+					System.out.println("Escribir el número de la estación que desea: ");
+					e = teclado.nextDouble();
+					miRadio.setEstacion(e);
+					AUX=miRadio.getEstacion();
+					System.out.println("Cambio realizado a la estación: "+AUX);
+				}
+				if (s1.equals("C") || s1.equals("c")){
+					int v, AUX;
+					System.out.println("Escribir el número del volumen que desea (de 0 a 10): ");
+					v = teclado.nextInt();
+					miRadio.setVolumen(v);
+					AUX=miRadio.getVolumen();
+					System.out.println("Cambio realizado al volumen: "+AUX);
+				}
+				if (s1.equals("D") || s1.equals("d")){
+					miRadio.apagar();
+					System.out.println("Radio apagada. Gracias por utilizar SuperRadio3000.");
+					encendido=miRadio.getEncendido();
+					if (encendido==false){
+						continuar=false;
+					}
+				}
+			}
+		} while (continuar==true);
+		teclado.close();
+	}
+}

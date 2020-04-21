@@ -1,0 +1,54 @@
+public class Entrenamiento {
+	//CONSTRUCTORES:
+	private Fechas Fecha;
+	private double max;
+	private double min;
+	private double[] p;
+	private double[] tiempos;
+	private int d;
+	private int m;
+	private int a;
+	private boolean b;
+
+	public Entrenamiento (){
+		Fecha = new Fechas ();
+		for (int i=0; i<10; i++){
+			tiempos[i]=0;
+		}
+	}
+	public Entrenamiento (int d, int m, int a, double t[]){
+		Fecha = new Fechas (d, m, a, b);
+		for (int i=0; i<10; i++){
+			tiempos [i] = t[i];
+		}
+	}
+	//SETTERS:
+	public void setTiempos(double[] t){
+		for (int i=0; i<10; i++){
+			tiempos[i]=t[i];
+		}
+	}
+	//GETTERS:
+	public double[] getTiempos(){
+		return tiempos;
+	}
+	//METODOS:
+	public double [] promedio (double[] t){
+		for (int i=0;i<10;i++){
+			p[i]=0;
+		}
+		for (int i=0; i<10; i++){
+			p[i]= p[i-1] + t[i];
+		}
+		return p;
+	}
+	public double [] maximo (double[] t){
+		for (int i =0; i<10; i++){
+			max[i]=0;
+		}
+		for (int i=0; i<10; i++){
+			max[i] = 
+		}
+	}
+
+}

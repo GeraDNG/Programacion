@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		Semaforo miSemaforo = new Semaforo();
+		String l;
+		boolean e=false, b=false;
+		int o;
+		do {
+			System.out.println();
+			System.out.println("Opciones: ");
+			System.out.println("1) Encender semaforo.");
+			System.out.println("2) Establecer luz.");
+			System.out.println("3) Funcionar.");
+			System.out.println("4) Apretar boton para cruzar.");
+			System.out.println("5) Apagar semaforo.");
+			System.out.println("Dar el numero de la opcion deseada:   ");
+			o = teclado.nextInt();
+			switch (o){
+			case 1:
+				miSemaforo.encender();
+				System.out.println("Encendido.");
+				break;
+			case 2:
+				System.out.println("Escribir Verde, Ambar o Rojo segun desee:   ");
+				l = teclado.next();
+				miSemaforo.setLuz(l);
+				l = miSemaforo.getLuz();
+				System.out.println("La luz se cambio a "+l);
+				break;
+			case 3:
+				e = miSemaforo.getEncendido();
+				b = miSemaforo.getBoton();
+				miSemaforo.funcionar(e, b);
+				break;
+			case 4:
+				System.out.println("Se apreto el boton para cruzar la calle.");
+				miSemaforo.apretarBoton();
+				e = miSemaforo.getEncendido();
+				b = miSemaforo.getBoton();
+				miSemaforo.funcionar(e, b);
+				l = miSemaforo.getLuz();
+				System.out.println("La luz es "+l+" puede cruzar la calle...");
+				miSemaforo.soltarBoton();
+				break;
+			case 5:
+				miSemaforo.apagar();
+				System.out.println("Apagando...");
+				break;
+			}
+		} while (o!=5);
+		teclado.close();
+	}
+
+}

@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		Agencia miAgencia = new Agencia();
+		Vehiculo miVehiculo = new Vehiculo();
+		int o;
+		do{
+			System.out.println();
+			System.out.println("Opciones:");
+			System.out.println("1) Dar nombre.");
+			System.out.println("2) Dar cuenta de 7 digitos.");
+			System.out.println("3) Dar dinero de la cuenta.");
+			System.out.println("4) Agregar dinero a la cuenta.");
+			System.out.println("5) Quitar dinero a la cuenta.");
+			System.out.println("6) Cambiar el nombre de la persona.");
+			System.out.println("7) Cambiar el numero de cuenta.");
+			System.out.println("8) Cambiar la cantidad de dinero.");
+			System.out.println("9) Salir.");
+			System.out.println("Dar el numero de la opcion deseada:   ");
+			o = teclado.nextInt();
+			switch (o){
+			case 1:
+				break;
+			case 2:
+				break;
+			}
+		} while (o!=9);
+		teclado.close();
+	}
+}

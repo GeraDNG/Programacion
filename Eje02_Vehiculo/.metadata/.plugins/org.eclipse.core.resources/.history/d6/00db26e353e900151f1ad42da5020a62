@@ -1,0 +1,34 @@
+
+public class Compacto extends Vehiculo{
+	private boolean tipoCombustible; //0=combustible 1=electrico
+	//Constructores
+	public Compacto(){
+		super();
+		tipoCombustible = false;
+	}
+	public Compacto(String m, String f, int c, double r, double p, boolean t){
+		super(m, f, c, r, p);
+		tipoCombustible = t;
+	}
+	//Setters
+	public void setTipoCombustible(boolean t){
+		tipoCombustible = t;
+	}
+	//Getters
+	public boolean getTipoCombustible(){
+		return tipoCombustible;
+	}
+	//Metodos
+	public double rendimientoTotal(){
+		if(tipoCombustible){
+			System.out.println("De acuerdo a su capacidad electrica y rendimiento en kwh")
+			return capacidad*rendimiento;
+		}
+		else
+		{
+			System.out.println("De acuerdo a su capacidad y rendimiento en km/l")
+			return capacidad*rendimiento;
+		}
+	}
+	
+}

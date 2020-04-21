@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner  teclado 	= new Scanner(System.in);
+		Articulo miArticulo = new Articulo();
+		Libro    miLibro	= new Libro();
+		Musica   miMusica 	= new Musica();
+		Catalogo miCatalogo = new Catalogo();
+		int o=0;
+		do{
+			System.out.println();
+			System.out.println("Menu de opciones: ");
+			System.out.println("1) Agregar un ejemplar al catalogo.");
+			System.out.println("2) Quitar un ejemplar del catalogo.");
+			System.out.println("3) Ver todos los ejemplares escritos por un autor.");
+			System.out.println("4) Ver si hay una cancion en el catalogo.");
+			System.out.println("5) Mostrar todos los libros.");
+			System.out.println("6) Mostrar todas las canciones.");
+			System.out.println("7) Salir.");
+			System.out.println("Dar el numero de la opcion deseada:   ");
+			o = teclado.nextInt();
+			switch(o){
+			case 1:
+				break;
+			case 2:
+				break;
+			}
+		} while (o != 7);
+		
+		teclado.close();
+	}
+
+}

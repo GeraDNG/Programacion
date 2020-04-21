@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;&apos; to &apos;Fecha.dia&apos;&#x0D;&#x0A;- Original project: &apos;Fecha&apos;&#x0D;&#x0A;- Destination element: &apos;Fecha.dia&apos;&#x0D;&#x0A;- Original element: &apos;Fecha.dia&apos;" description="Copy field" destination="/src&lt;{Fecha.java[Fecha^dia" element1="/src&lt;{Fecha.java[Fecha^dia" flags="589830" id="org.eclipse.jdt.ui.copy" members="1" policy="org.eclipse.jdt.ui.copyMembers" stamp="1454305248685" version="1.0"/>
+</session>

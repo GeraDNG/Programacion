@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		double rad, lad;
+		System.out.println("Dame el valor del radio: ");
+		rad = teclado.nextDouble();
+		teclado.nextLine();
+		System.out.println("Dame el valor del lado: ");
+		lad = teclado.nextDouble();
+		teclado.nextLine();
+		Circulo miCirculo = new Circulo(1, rad, rad*2);
+		Cuadrado miCuadrado = new Cuadrado(2, lad);
+		System.out.println("Perimetro del circulo "+miCirculo.perimetro());
+		System.out.println("Area del circulo "+miCirculo.area());
+		System.out.println("Perimetro del cuadrado "+miCuadrado.perimetro());
+		System.out.println("Perimetro del cuadrado "+miCuadrado.perimetro());
+		System.out.println("Figuras creadas hasta ahora: "+Figura.getNoFiguras());
+		
+	}
+
+}

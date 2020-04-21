@@ -1,0 +1,16 @@
+import java.lang.Math;
+public class Circulo extends Figura {
+	private double radio;
+	private double diametro;
+	public Circulo(){
+		super();
+		radio = 0;
+		diametro = 0;
+	}
+	public Circulo(int c, double r, double d){
+		super(c);
+		radio = r;
+		diametro = d;
+	}
+	//SETTERS & GETTERS:
+}

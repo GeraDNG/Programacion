@@ -1,0 +1,91 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		Cuenta miCuenta = new Cuenta();
+		int c, d, suma, resta, o;
+		String n;
+		do{
+			System.out.println();
+			System.out.println("Opciones:");
+			System.out.println("1) Dar nombre.");
+			System.out.println("2) Dar cuenta de 7 digitos.");
+			System.out.println("3) Dar dinero de la cuenta.");
+			System.out.println("4) Agregar dinero a la cuenta.");
+			System.out.println("5) Quitar dinero a la cuenta.");
+			System.out.println("6) Cambiar el nombre de la persona.");
+			System.out.println("7) Cambiar el numero de cuenta.");
+			System.out.println("8) Cambiar la cantidad de dinero.");
+			System.out.println("9) Salir.");
+			System.out.println("Dar el numero de la opcion deseada:   ");
+			o = teclado.nextInt();
+			switch (o){
+			case 1:
+				System.out.println("Escribir el nombre (sin espacios):   ");
+				n = teclado.next();
+				miCuenta.setNombre(n);
+				n = miCuenta.getNombre();
+				System.out.println("De acuerdo, el nombre sera: "+n);
+				break;
+			case 2:
+				System.out.println("Escribir el numero de 7 digitos para la cuenta:   ");
+				c = teclado.nextInt();
+				miCuenta.setCuenta(c);
+				c = miCuenta.getCuenta();
+				System.out.println("Muy bien, su cuenta sera: "+c);
+				break;
+			case 3:
+				System.out.println("Escribir el dinero de la cuenta:   ");
+				d = teclado.nextInt();
+				miCuenta.setDinero(d);
+				d = miCuenta.getDinero();
+				System.out.println("Su saldo es de : "+d);
+				break;
+			case 4:
+				System.out.println("Escribir la cantidad que desea añadir a la cuenta:   ");
+				suma = teclado.nextInt();
+				d = miCuenta.getDinero();
+				miCuenta.sumarDinero(d, suma);
+				d = miCuenta.getDinero();
+				System.out.println("Su nuevo saldo es de: "+d);
+				break;
+			case 5:
+				System.out.println("Escribir la cantidad que desea quitar de la cuenta:   ");
+				resta = teclado.nextInt();
+				d = miCuenta.getDinero();
+				miCuenta.restarDinero(d, resta);
+				d = miCuenta.getDinero();
+				System.out.println("Su nuevo saldo es de:   "+d);
+				break;
+			case 6:
+				System.out.println("Escribir el nuevo nombre:   ");
+				n = teclado.next();
+				miCuenta.cambioNombre(n);
+				n = miCuenta.getNombre();
+				System.out.println("El nuevo nombre para la cuenta es: "+n);
+				break;
+			case 7:
+				System.out.println("Escribir el nuevo numero de cuenta de 7 digitos:   ");
+				c = teclado.nextInt();
+				miCuenta.cambioCuenta(c);
+				c = miCuenta.getCuenta();
+				System.out.println("El nuevo numero de cuenta es de: "+c);
+				break;
+			case 8:
+				System.out.println("Dar la nueva cantidad de dinero de la cuenta:   ");
+				d = teclado.nextInt();
+				miCuenta.cambioDinero(d);
+				d = miCuenta.getDinero();
+				System.out.println("La nueva cantidad de dinero de la cuenta es: "+d);
+				break;
+			case 9:
+				System.out.println("Saliendo...");
+				break;
+			}
+		} while (o!=9);
+		teclado.close();
+
+	}
+
+}

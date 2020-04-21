@@ -1,0 +1,68 @@
+
+public class Vehiculo {
+	
+	protected String modelo;
+	protected String fabricante;
+	protected int capacidad;
+	protected double rendimiento;
+	protected double precio;
+	
+	//Constructores
+	public Vehiculo(){
+		modelo = "458";
+		fabricante = "Ferrari";
+		capacidad = 80;
+		rendimiento = 15.6;
+		precio = 7000000;
+	}
+	public Vehiculo(String m, String f, int c, double r, double p){
+		modelo = m;
+		fabricante = f;
+		capacidad = c;
+		rendimiento = r;
+		precio = p;
+	}
+	
+	//Setters
+	public void setModelo(String m){
+		modelo = m;
+	}
+	public void setFabricante(String f){
+		fabricante = f;
+	}
+	public void setCapacidad(int c){
+		capacidad = c;
+	}
+	public void setRendimiento(double r){
+		rendimiento = r;
+	}
+	public void setPrecio(double p){
+		precio = p;
+	}
+	//Getters
+	public String getModelo(){
+		return modelo;
+	}
+	public String getFabricante(){
+		return fabricante;
+	}
+	public int getCapacidad(){
+		return capacidad;
+	}
+	public double getRendimiento(){
+		return rendimiento;
+	}
+	public double getPrecio(){
+		return precio;
+	}
+	
+	//Metodos
+	public double rendimientoTotal(){
+		return capacidad*rendimiento;
+	}
+	
+	//toString
+	public String toString(){
+		return "Modelo: "+modelo+" Fabricante: "+fabricante+" Capacidad: "+capacidad+" Rendimiento: "+rendimiento+" Precio: "+precio;
+	}
+}

@@ -1,0 +1,253 @@
+public class Fecha {
+	private int dia;
+	private int mes;
+	private int ano;
+	private int diaCumple;
+	private int mesCumple;
+	private boolean bisiesto;
+	//CONSTRUCTORES:
+	public Fecha (){
+		dia 		= 31;
+		mes 		= 1;
+		ano			= 2016;
+		diaCumple	= 5;
+		mesCumple 	= 1;
+	}
+	public Fecha (int d, int m, int a, int dC, int mC){
+		dia 		= d;
+		mes 		= m;
+		ano 		= a;
+		diaCumple 	= dC;
+		mesCumple 	= mC;
+	}
+	//SETTERS:
+	public void setMesCumple (int mC){
+		mesCumple = mC;
+	}
+	public void setDiaCumple (int dC){
+		diaCumple = dC;
+	}
+	public void setAno (int a){
+		ano = a;
+	}
+	public void setBisiesto (int a){
+		if ((a/4 == 0) || (a/100 != 0)){
+			bisiesto = true;
+		}
+	}
+	public void setMes (int m){
+		if (m<12 && m>0){
+			mes = m;
+		}
+	}
+	public void setDia (boolean bisiesto, int m, int d){
+		switch (m){
+		case 1: 
+			if (d<=31 && d>0){
+				dia = d;
+			} break;
+		case 2:
+			if (bisiesto==true){
+				if (d<=29 && d>0){
+					dia = d;
+				}
+			}
+			if (bisiesto==false){
+				if (d<=28 && d>0){
+					dia = d;
+				}
+			} break;
+		case 3:
+			if (d<=31 && d>0){
+				dia = d;
+			} break;
+		case 4:
+			if (d<=30 && d>0){
+				dia = d;
+			} break;
+		case 5:
+			if (d<=31 && d>0){
+				dia = d;
+			} break;
+		case 6: 
+			if (d<=30 && d>0){
+				dia = d;
+			} break;
+		case 7:
+			if (d<=31 && d>0){
+				dia = d;
+			} break;
+		case 8:
+			if (d<=31 && d>0){
+				dia = d;
+			} break;
+		case 9:
+			if (d<=30 && d>0){
+				dia = d;
+			} break;
+		case 10:
+			if (d<=31 && d>0){
+				dia = d;
+			} break;
+		case 11:
+			if (d<=30 && d>0){
+				dia = d;
+			} break;
+		case 12:
+			if (d<=31 && d>0){
+				dia = d;
+			} break;
+		}
+	}
+	//GETTERS:
+	public int getDia (){
+		return dia;
+	}
+	public int getMes (){
+		return mes;
+	}
+	public int getAno (){
+		return ano;
+	}
+	public int getDiaCumple(){
+		return diaCumple;
+	}
+	public int getMesCumple(){
+		return mesCumple;
+	}
+	public boolean getBisiesto(){
+		return bisiesto;
+	}
+	//METODOS:
+	public void sumarAnos (int sumarAnos, int a){
+		ano = a + sumarAnos;
+	}
+	public void sumarMeses (int sumarMeses, int m, int a){
+		for (int i=0; i<= sumarMeses; i++){
+			mes = m + i;
+			if (mes > 12){
+				m = 1;
+				ano = a + 1;
+			}
+		}
+	}
+	public void sumarDias (int sumarDias, int m, int d, boolean bisiesto){
+		switch (m){
+		case 1: 
+			for (int i=1; i<=sumarDias; i++){
+				if(dia!=31){
+					dia = d + i;
+				}
+				if (dia==31 && i==sumarDias){
+					dia = 1;
+					mes = m + 1;
+				}
+				if (dia==31 && i!=sumarDias){
+					dia = 0;
+					i = 0;
+					mes = m + 1;
+				}
+			} break;
+		case 2:
+			if (bisiesto==true){
+				for (int i=0; i<=sumarDias; i++){
+					dia = d + i;
+					if (dia==29){
+						dia = 0;
+						mes = m + 1;
+					}
+				}
+			}
+			if (bisiesto==false){
+				for (int i=0; i<=sumarDias; i++){
+					dia = d + i;
+					if (dia==28){
+						dia = 0;
+						mes = m + 1;
+					}
+				}
+			} break;
+		case 3:
+			for (int i=0; i<=sumarDias; i++){
+				dia = d + i;
+				if (dia==31){
+					dia = 0;
+					mes = m + 1;
+				}
+			} break;
+		case 4:
+			for (int i=0; i<=sumarDias; i++){
+				dia = d + i;
+				if (dia==30){
+					dia = 0;
+					mes = m + 1;
+				}
+			} break;
+		case 5:
+			for (int i=0; i<=sumarDias; i++){
+				dia = d + i;
+				if (dia==31){
+					dia = 0;
+					mes = m + 1;
+				}
+			} break;
+		case 6:
+			for (int i=0; i<=sumarDias; i++){
+				dia = d + i;
+				if (dia==30){
+					dia = 0;
+					mes = m + 1;
+				}
+			} break;
+		case 7:
+			for (int i=0; i<=sumarDias; i++){
+				dia = d + i;
+				if (dia==31){
+					dia = 0;
+					mes = m + 1;
+				}
+			} break;
+		case 8:
+			for (int i=0; i<=sumarDias; i++){
+				dia = d + i;
+				if (dia==31){
+					dia = 0;
+					mes = m + 1;
+				}
+			} break;
+		case 9:
+			for (int i=0; i<=sumarDias; i++){
+				dia = d + i;
+				if (dia==30){
+					dia = 0;
+					mes = m + 1;
+				}
+			} break;
+		case 10:
+			for (int i=0; i<=sumarDias; i++){
+				dia = d + i;
+				if (dia==31){
+					dia = 0;
+					mes = m + 1;
+				}
+			} break;
+		case 11:
+			for (int i=0; i<=sumarDias; i++){
+				dia = d + i;
+				if (dia==30){
+					dia = 0;
+					mes = m + 1;
+				}
+			} break;
+		case 12:
+			for (int i=0; i<=sumarDias; i++){
+				dia = d + i;
+				if (dia==31){
+					dia = 0;
+					mes = m + 1;
+				}
+			} break;
+		}
+	}
+
+}
